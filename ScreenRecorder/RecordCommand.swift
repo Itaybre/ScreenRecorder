@@ -33,10 +33,11 @@ struct RecordCommand: ParsableCommand {
         }
         
         if verbose {
-            print("Verbose enabled")
-            print("FPS: \(fps)")
-            print("Quality: \(quality)")
-            print("Output Path: \(output)")
+            Log.shared.verboseEnabled = true
+            Log.shared.log("Verbose enabled")
+            Log.shared.log("FPS: \(fps)")
+            Log.shared.log("Quality: \(quality)")
+            Log.shared.log("Output Path: \(output)")
         }
     }
 }
