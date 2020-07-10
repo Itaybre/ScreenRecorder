@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		F40DC94324B767A9005A41C9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40DC94224B767A9005A41C9 /* main.swift */; };
+		F458B5CF24B813C50017A6BD /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = F458B5CE24B813C50017A6BD /* ArgumentParser */; };
+		F458B5D124B813F50017A6BD /* RecordCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F458B5D024B813F50017A6BD /* RecordCommand.swift */; };
+		F458B5D324B815550017A6BD /* Quality.swift in Sources */ = {isa = PBXBuildFile; fileRef = F458B5D224B815550017A6BD /* Quality.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F40DC93F24B767A9005A41C9 /* ScreenRecorder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ScreenRecorder; sourceTree = BUILT_PRODUCTS_DIR; };
+		F40DC93F24B767A9005A41C9 /* screenrecorder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = screenrecorder; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40DC94224B767A9005A41C9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		F458B5D024B813F50017A6BD /* RecordCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCommand.swift; sourceTree = "<group>"; };
+		F458B5D224B815550017A6BD /* Quality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quality.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F458B5CF24B813C50017A6BD /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,7 +55,7 @@
 		F40DC94024B767A9005A41C9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F40DC93F24B767A9005A41C9 /* ScreenRecorder */,
+				F40DC93F24B767A9005A41C9 /* screenrecorder */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				F40DC94224B767A9005A41C9 /* main.swift */,
+				F458B5D024B813F50017A6BD /* RecordCommand.swift */,
+				F458B5D224B815550017A6BD /* Quality.swift */,
 			);
 			path = ScreenRecorder;
 			sourceTree = "<group>";
@@ -65,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F40DC93E24B767A9005A41C9 /* ScreenRecorder */ = {
+		F40DC93E24B767A9005A41C9 /* screenrecorder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F40DC94624B767A9005A41C9 /* Build configuration list for PBXNativeTarget "ScreenRecorder" */;
+			buildConfigurationList = F40DC94624B767A9005A41C9 /* Build configuration list for PBXNativeTarget "screenrecorder" */;
 			buildPhases = (
 				F40DC93B24B767A9005A41C9 /* Sources */,
 				F40DC93C24B767A9005A41C9 /* Frameworks */,
@@ -77,9 +85,12 @@
 			);
 			dependencies = (
 			);
-			name = ScreenRecorder;
+			name = screenrecorder;
+			packageProductDependencies = (
+				F458B5CE24B813C50017A6BD /* ArgumentParser */,
+			);
 			productName = ScreenRecorder;
-			productReference = F40DC93F24B767A9005A41C9 /* ScreenRecorder */;
+			productReference = F40DC93F24B767A9005A41C9 /* screenrecorder */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -106,11 +117,14 @@
 				Base,
 			);
 			mainGroup = F40DC93624B767A9005A41C9;
+			packageReferences = (
+				F458B5CD24B813C50017A6BD /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			productRefGroup = F40DC94024B767A9005A41C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F40DC93E24B767A9005A41C9 /* ScreenRecorder */,
+				F40DC93E24B767A9005A41C9 /* screenrecorder */,
 			);
 		};
 /* End PBXProject section */
@@ -120,6 +134,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F458B5D124B813F50017A6BD /* RecordCommand.swift in Sources */,
+				F458B5D324B815550017A6BD /* Quality.swift in Sources */,
 				F40DC94324B767A9005A41C9 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,7 +290,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F40DC94624B767A9005A41C9 /* Build configuration list for PBXNativeTarget "ScreenRecorder" */ = {
+		F40DC94624B767A9005A41C9 /* Build configuration list for PBXNativeTarget "screenrecorder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F40DC94724B767A9005A41C9 /* Debug */,
@@ -284,6 +300,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F458B5CD24B813C50017A6BD /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F458B5CE24B813C50017A6BD /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F458B5CD24B813C50017A6BD /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F40DC93724B767A9005A41C9 /* Project object */;
 }
