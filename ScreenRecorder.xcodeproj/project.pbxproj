@@ -12,6 +12,7 @@
 		F458B5D124B813F50017A6BD /* RecordCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F458B5D024B813F50017A6BD /* RecordCommand.swift */; };
 		F458B5D324B815550017A6BD /* Quality.swift in Sources */ = {isa = PBXBuildFile; fileRef = F458B5D224B815550017A6BD /* Quality.swift */; };
 		F458B5D524B816790017A6BD /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F458B5D424B816790017A6BD /* Log.swift */; };
+		F458B5D724B8AFC60017A6BD /* DeviceFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F458B5D624B8AFC60017A6BD /* DeviceFinder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,7 @@
 		F458B5D024B813F50017A6BD /* RecordCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCommand.swift; sourceTree = "<group>"; };
 		F458B5D224B815550017A6BD /* Quality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quality.swift; sourceTree = "<group>"; };
 		F458B5D424B816790017A6BD /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		F458B5D624B8AFC60017A6BD /* DeviceFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceFinder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				F458B5D024B813F50017A6BD /* RecordCommand.swift */,
 				F458B5D224B815550017A6BD /* Quality.swift */,
 				F458B5D424B816790017A6BD /* Log.swift */,
+				F458B5D624B8AFC60017A6BD /* DeviceFinder.swift */,
 			);
 			path = ScreenRecorder;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F458B5D124B813F50017A6BD /* RecordCommand.swift in Sources */,
+				F458B5D724B8AFC60017A6BD /* DeviceFinder.swift in Sources */,
 				F458B5D324B815550017A6BD /* Quality.swift in Sources */,
 				F458B5D524B816790017A6BD /* Log.swift in Sources */,
 				F40DC94324B767A9005A41C9 /* main.swift in Sources */,
@@ -266,6 +270,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PY9WJ3M9MW;
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -277,6 +282,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PY9WJ3M9MW;
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
