@@ -2,7 +2,15 @@
 Record any iOS device connected with USB to a Mac
 
 ```
-TODO Guide
+USAGE: record-command [--verbose] [--udid <udid>] --output <output> [--fps <fps>] [--quality <quality>]
+
+OPTIONS:
+  -v, --verbose           Enable verbose mode
+  -u, --udid <udid>       Device's UDID
+  -o, --output <output>   Output file
+  -f, --fps <fps>         Video FPS (default: 60)
+  -q, --quality <quality> Video Quality [low/medium/high] (default: high)
+  -h, --help              Show help information.
 ```
 
 ## Installation
