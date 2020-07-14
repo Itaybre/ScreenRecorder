@@ -11,12 +11,19 @@ import CoreMediaIO
 import AVFoundation
 
 class DeviceFinder {
-    var udid: String?
+    var configuration: Configuration!
+    
     var waitingForDevice: Bool = false
     var selectedDevice: AVCaptureDevice? = nil
+    var recordingSession: RecordSession?
     
-    func findDevice(udid: String?) {
-        self.udid = udid
+    static let shared = DeviceFinder()
+    
+    private init() {
+    }
+    
+    func findDevice(configuration: Configuration) {
+        self.configuration = configuration
         
         enableNotifications()
         enableCoreMedia(true)
@@ -25,6 +32,10 @@ class DeviceFinder {
             // Use background thread to wait for devices
             self.waitForDevice()
         }
+    }
+    
+    func stop() {
+        recordingSession?.stopRecording()
     }
     
     private func waitForDevice() {
@@ -42,13 +53,16 @@ class DeviceFinder {
         
         guard let device = selectedDevice else {
             print("No device found")
+            DeviceFinder.shared.enableCoreMedia(false)
             exit(1)
         }
 
         print("Device found: \(device.localizedName)")
+        recordingSession = RecordSession(device: device, configuration:configuration)
+        recordingSession?.startRecording()
     }
     
-    private func enableCoreMedia(_ enabled: Bool) {
+    func enableCoreMedia(_ enabled: Bool) {
         var prop = CMIOObjectPropertyAddress(
           mSelector: CMIOObjectPropertySelector(kCMIOHardwarePropertyAllowScreenCaptureDevices),
           mScope: CMIOObjectPropertyScope(kCMIOObjectPropertyScopeGlobal),
@@ -85,7 +99,7 @@ extension DeviceFinder {
         let device = notification.object as! AVCaptureDevice
         if device.hasMediaType(.muxed),
             device.modelID == "iOS Device",
-            udid == nil || device.uniqueID == udid {
+            configuration.udid == nil || device.uniqueID == configuration.udid {
             waitingForDevice = false
             selectedDevice = device
         }

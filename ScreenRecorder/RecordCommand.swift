@@ -39,5 +39,12 @@ struct RecordCommand: ParsableCommand {
             Log.shared.log("Quality: \(quality)")
             Log.shared.log("Output Path: \(output)")
         }
+        
+        if FileManager.default.fileExists(atPath: output) {
+            throw fatalError("There is already a file at path \(output)")
+        }
+        
+        let config = Configuration(udid: udid, outputPath: output, fps: fps, quality: quality)
+        DeviceFinder.shared.findDevice(configuration: config)
     }
 }
